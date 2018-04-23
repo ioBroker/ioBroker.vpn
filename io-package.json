@@ -1,0 +1,96 @@
+{
+    "common": {
+        "name": "vpn",
+        "title": "VPN connection",
+        "desc": {
+            "en": "Create VPN connection via ioBroker",
+            "de": "Erstellen Sie eine VPN-Verbindung über ioBroker",
+            "ru": "Создание VPN-соединения через ioBroker",
+            "pt": "Crie uma conexão VPN via ioBroker",
+            "nl": "Maak een VPN-verbinding via ioBroker",
+            "fr": "Créer une connexion VPN via ioBroker",
+            "it": "Crea una connessione VPN tramite ioBroker",
+            "es": "Crear una conexión VPN a través de ioBroker"
+        },
+        "version": "0.1.2",
+        "news": {
+            "0.1.2": {
+                "en": "Initial commit",
+                "de": "Erstes Commit",
+                "ru": "Начальное коммит",
+                "pt": "Compromisso inicial",
+                "nl": "Eerste commit",
+                "fr": "Engagement initial",
+                "it": "Commit iniziale",
+                "es": "Compromiso inicial"
+            }
+        },
+        "mode": "daemon",
+        "platform": "Javascript/Node.js",
+        "loglevel": "info",
+        "keywords": [
+            "vpn",
+            "remote access"
+        ],
+        "main": "main.js",
+        "enabled": true,
+        "authors": [
+            "gh-god",
+            "Bluefox <dogafox@gmail.com>"
+        ],
+        "materialize": true,
+        "license": "CC-BY-NC-4.0",
+        "readme": "https://github.com/ioBroker/ioBroker.vpn/blob/master/README.md",
+        "icon": "vpn.png",
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.vpn/master/admin/vpn.png",
+        "type": "protocols",
+        "dependencies": [
+            {
+                "js-controller": ">=1.2.3"
+            }
+        ],
+        "stopTimeout": 10000
+    },
+    "native": {
+        "name": "",
+        "accessServerURI": "https://iobroker.link:5000",
+        "accessServerPollInterval": 10,
+        "allowedUsers": [],
+        "devices": [
+            {
+                "enabled": true,
+                "name": "ioBroker Admin",
+                "host": "localhost",
+                "port": 8081
+            },
+            {
+                "enabled": true,
+                "name": "ioBroker Web",
+                "host": "localhost",
+                "port": 8082
+            }
+        ]
+    },
+    "instanceObjects": [
+        {
+            "_id":  "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id":  "info.connection",
+            "type": "state",
+            "common": {
+                "role":  "info.clients",
+                "name":  "Connected to cloud",
+                "type":  "string",
+                "read":  true,
+                "write": false
+            },
+            "native": {}
+        }
+    ]
+}
