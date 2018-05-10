@@ -11,9 +11,14 @@ This adapter allows secure connection over iobroker.link cloud.
 
 ## Adapter Settings
 
+## Proxy
+Proxy can be defined as URI: *http://proxy:8080* or via **HTTPS_PROXY** environment variable.
 
 ## Changelog
-### 0.1.2 (2018-04-16)
+### 0.2.0 (2018-05-10)
+* (bluefox) HTTP proxy support
+
+### 0.1.3 (2018-04-25)
 * (bluefox) Initial commit
 
 ## License

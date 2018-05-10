@@ -1,7 +1,7 @@
 {
   "name": "iobroker.vpn",
   "description": "Create VPN connection via ioBroker",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Bluefox <dogafox@gmail.com>",
   "contributors": [
     "Bluefox <dogafox@gmail.com>"
@@ -23,6 +23,7 @@
     "home automation"
   ],
   "dependencies": {
+    "https-proxy-agent": "^2.2.1",
     "jwt-simple": "^0.5.1",
     "node-rsa": "^0.4.2",
     "request": "^2.85.0",

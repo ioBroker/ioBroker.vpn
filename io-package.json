@@ -12,9 +12,20 @@
             "it": "Crea una connessione VPN tramite ioBroker",
             "es": "Crear una conexión VPN a través de ioBroker"
         },
-        "version": "0.1.2",
+        "version": "0.2.0",
         "news": {
-            "0.1.2": {
+            "0.2.0": {
+                "en": "Added support of HTTP proxy ",
+                "de": "Unterstützung von HTTP-Proxy hinzugefügt",
+                "ru": "Добавлена ​​поддержка HTTP-прокси",
+                "pt": "Adicionado suporte de proxy HTTP",
+                "nl": "Ondersteuning van HTTP-proxy toegevoegd",
+                "fr": "Ajout du support du proxy HTTP",
+                "it": "Aggiunto supporto del proxy HTTP",
+                "es": "Se agregó soporte de proxy HTTP",
+                "pl": "Dodano obsługę proxy HTTP"
+            },
+            "0.1.3": {
                 "en": "Initial commit",
                 "de": "Erstes Commit",
                 "ru": "Начальное коммит",
@@ -53,9 +64,10 @@
     },
     "native": {
         "name": "",
-        "accessServerURI": "https://iobroker.link:5000",
+        "accessServerURI": "https://iobroker.link",
         "accessServerPollInterval": 10,
         "allowedUsers": [],
+        "proxyURI": "",
         "devices": [
             {
                 "enabled": true,
@@ -84,8 +96,21 @@
             "_id":  "info.connection",
             "type": "state",
             "common": {
-                "role":  "info.clients",
+                "role":  "indicator.connection",
                 "name":  "Connected to cloud",
+                "type":  "string",
+                "read":  true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id":  "info.status",
+            "type": "state",
+            "common": {
+                "role":  "text",
+                "name":  "Client status",
+                "desc":  "This text will be send to cloud to indicate the client overall status. Empty is ok. Some text describes error.",
                 "type":  "string",
                 "read":  true,
                 "write": false
